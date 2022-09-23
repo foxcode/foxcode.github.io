@@ -2,6 +2,9 @@
 title: "Blog 1"
 date: 2022-09-23
 layout: post
+tags:
+- powerplatform
+- webapi
 ---
 
 # Blog post 1
