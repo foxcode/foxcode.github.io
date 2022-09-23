@@ -1,0 +1,18 @@
+---
+layout: blog
+title: Retrieve Changes from Dataverse using Change Tracking
+---
+
+One of the common topics that arise when integrating with Dataverse is retrieving changes for records in a table from Dataverse. Several strategies exist for doing this, but in this post I will concentrate on using the Web API to query for changes. In a future blog I will cover how to do the same thing using the SDK in C#.
+
+## Pre-requsities
+We can only query for changes where change tracking is enabled for the table in Dataverse. This is an attribute of the table and once set, can't be reversed. When creating or modifying a table, in the maker portal, expand the Advanced options. In the **For this table** section, enable the **Track changes** option and save the table. Once this has been enables, changes will be tracked.
+
+### How does it actually work
+When querying for changes, and optional token is passed as part of the query. Only changes added *after* this token was generated are returned.
+
+#### Thats all well and good, but where do I get a token from?
+A token is returned when a query with the change tracking option enabled is made, the results of the query are returned to the caller along with a token. This token can then be presented back in the next query, which will then only return the differences between the first query (which generated the token that was passed in) and the latest query.
+
+#### OK, but what happens when I haven't got a token?
+The token is optional, and doesn't need to be passed. If it is omitted, then all the records are returned, this is pretty much the same as querying without using the change tracking option, except for one key difference, we get a token included in the results as well as the complete set of records, so we can pass that in the next query. Using this pattern, the first query (without any token) will retrieve all records, and then subsequent queries will only return the deltas. 
