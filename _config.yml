@@ -4,6 +4,8 @@ author: "Matthew Disney-Cook"
 
 theme: minima
 
+base_url: foxcode.github.io
+
 # Minima social links
 twitter_username: cookma
 github_username: foxcode
