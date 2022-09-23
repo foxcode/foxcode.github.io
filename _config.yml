@@ -1,10 +1,6 @@
-lsi: false
-safe: true
-source: foxcode.github.io
-incremental: false
-highlighter: rouge
-gist:
-  noscript: false
-kramdown:
-  math_engine: mathjax
-  syntax_highlighter: rouge
+title: My blog
+description: My very nice blog
+author: "Matthew Disney-Cook"
+
+theme: minima
+
