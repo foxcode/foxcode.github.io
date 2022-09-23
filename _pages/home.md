@@ -1,7 +1,7 @@
 ---
 permalink: /
 layout: home
-title: welcome
+title: Home
 list_title: My blog posts
 ---
 
