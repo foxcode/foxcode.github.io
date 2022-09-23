@@ -4,3 +4,10 @@ author: "Matthew Disney-Cook"
 
 theme: minima
 
+# Minima social links
+twitter_username: cookma
+github_username: foxcode
+rss: rss
+
+# Minima: show excerpts in the frontpage
+show_excerpts: true
